@@ -1,0 +1,15 @@
+body{
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+    flex-wrap: wrap; */
+    display: grid;
+    place-items: center;
+}
+div{
+    width: 700px;
+    height: 300px;
+    display: grid;
+    place-items: center;
+}
