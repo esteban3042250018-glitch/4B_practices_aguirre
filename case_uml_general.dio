@@ -1,0 +1,79 @@
+<mxfile host="65bd71144e">
+    <diagram id="lwFM6Tm5r_Dz3YrjJldm" name="Page-1">
+        <mxGraphModel dx="720" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="system_boundary" parent="1" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" value="Sistema CloudGuard Ops" vertex="1">
+                    <mxGeometry height="720" width="560" x="280" y="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Cliente PyME&#xa;(Admin)" vertex="1">
+                    <mxGeometry height="80" width="40" x="140" y="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_bot" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#f8cecc;strokeColor=#b85450;" value="Tráfico HTTP&#xa;/ Cliente API" vertex="1">
+                    <mxGeometry height="80" width="40" x="140" y="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_stripe" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#fff2cc;strokeColor=#d6b656;" value="Pasarela de Pagos&#xa;(Stripe)" vertex="1">
+                    <mxGeometry height="80" width="40" x="920" y="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_login" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU01: Iniciar Sesión" vertex="1">
+                    <mxGeometry height="50" width="160" x="320" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_sub" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU02: Gestionar Suscripción" vertex="1">
+                    <mxGeometry height="50" width="160" x="320" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_metrics" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU03: Visualizar Métricas&#xa;y Ahorro" vertex="1">
+                    <mxGeometry height="50" width="160" x="320" y="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_rules" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" value="CU04: Crear/Editar&#xa;Reglas de Tráfico" vertex="1">
+                    <mxGeometry height="55" width="170" x="320" y="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_eval" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" value="CU05: Evaluar Petición HTTP" vertex="1">
+                    <mxGeometry height="55" width="170" x="320" y="420" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_log" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU06: Registrar Log&#xa;de Petición" vertex="1">
+                    <mxGeometry height="50" width="160" x="580" y="420" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_inv" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="CU07: Consultar Inventario&#xa;de Recursos Cloud" vertex="1">
+                    <mxGeometry height="55" width="180" x="320" y="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_detect" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="CU08: Detectar Recursos&#xa;Inactivos (&gt; 30 días)" vertex="1">
+                    <mxGeometry height="55" width="180" x="320" y="615" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_fix" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="CU09: Ejecutar Optimización&#xa;(One-Click Fix)" vertex="1">
+                    <mxGeometry height="55" width="180" x="580" y="615" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel1" edge="1" parent="1" source="actor_admin" target="cu_login">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel2" edge="1" parent="1" source="actor_admin" target="cu_sub">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel3" edge="1" parent="1" source="actor_admin" target="cu_metrics">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel4" edge="1" parent="1" source="actor_admin" target="cu_rules">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel5" edge="1" parent="1" source="actor_admin" target="cu_inv">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel6" edge="1" parent="1" source="cu_sub" target="actor_stripe">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel7" edge="1" parent="1" source="actor_bot" target="cu_eval">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc1" edge="1" parent="1" source="cu_eval" style="dashed=1;endArrow=open;endSize=12;" target="cu_log" value="&lt;&lt;include&gt;&gt;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc2" edge="1" parent="1" source="cu_inv" style="dashed=1;endArrow=open;endSize=12;" target="cu_detect" value="&lt;&lt;include&gt;&gt;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ext1" edge="1" parent="1" source="cu_fix" style="dashed=1;endArrow=open;endSize=12;" target="cu_detect" value="&lt;&lt;extend&gt;&gt;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

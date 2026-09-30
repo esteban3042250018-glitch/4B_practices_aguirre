@@ -1,0 +1,64 @@
+<mxfile host="65bd71144e">
+    <diagram id="4gzkceCIVfrg-kycTajj" name="Page-1">
+        <mxGraphModel dx="720" dy="654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="system_boundary" parent="1" style="shape=rect;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="Modulo CloudPrune (FinOps &amp; Costos)" vertex="1">
+                    <mxGeometry height="680" width="580" x="280" y="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Cliente PyME&#xa;(Admin / Financiero)" vertex="1">
+                    <mxGeometry height="80" width="40" x="140" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_sync" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU-F01: Sincronizar Inventario&#xa;de Infraestructura Cloud" vertex="1">
+                    <mxGeometry height="55" width="190" x="320" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_scan" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontStyle=1" value="CU-F02: Escanear Recursos&#xa;Inactivos (&gt; 30 dias)" vertex="1">
+                    <mxGeometry height="55" width="190" x="320" y="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_calc" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU-F03: Calcular Estimación&#xa;de Desperdicio ($/mes)" vertex="1">
+                    <mxGeometry height="55" width="190" x="610" y="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_view_report" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU-F04: Consultar Reporte&#xa;de Ahorro Financiero" vertex="1">
+                    <mxGeometry height="55" width="190" x="320" y="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_export" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU-F05: Exportar Reporte&#xa;en PDF / Excel" vertex="1">
+                    <mxGeometry height="55" width="190" x="610" y="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_oneclick" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontStyle=1" value="CU-F06: Ejecutar Accion&#xa;One-Click Fix (Pausar/Eliminar)" vertex="1">
+                    <mxGeometry height="60" width="200" x="320" y="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_status" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU-F07: Actualizar Estado&#xa;del Recurso en Base de Datos" vertex="1">
+                    <mxGeometry height="60" width="200" x="610" y="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_notify" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;" value="CU-F08: Enviar Alerta de&#xa;Ahorro por Correo" vertex="1">
+                    <mxGeometry height="55" width="190" x="320" y="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="r1" edge="1" parent="1" source="actor_admin" target="cu_sync">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r2" edge="1" parent="1" source="actor_admin" target="cu_scan">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r3" edge="1" parent="1" source="actor_admin" target="cu_view_report">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r4" edge="1" parent="1" source="actor_admin" target="cu_oneclick">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc1" edge="1" parent="1" source="cu_scan" style="dashed=1;endArrow=open;endSize=12;" target="cu_calc" value="&lt;&lt;include&gt;&gt;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ext1" edge="1" parent="1" source="cu_export" style="dashed=1;endArrow=open;endSize=12;" target="cu_view_report" value="&lt;&lt;extend&gt;&gt;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc2" edge="1" parent="1" source="cu_oneclick" style="dashed=1;endArrow=open;endSize=12;" target="cu_status" value="&lt;&lt;include&gt;&gt;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ext2" edge="1" parent="1" source="cu_notify" style="dashed=1;endArrow=open;endSize=12;" target="cu_calc" value="&lt;&lt;extend&gt;&gt;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
